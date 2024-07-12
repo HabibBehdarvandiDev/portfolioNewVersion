@@ -1,20 +1,127 @@
 import type { Config } from "tailwindcss";
+import { nextui } from "@nextui-org/react";
 
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+  theme: {},
+  darkMode: "class",
+  plugins: [
+    nextui({
+      themes: {
+        light: {
+          colors: {
+            background: "#FFFFFF",
+            foreground: "#11181C",
+            primary: {
+              50: "#e3f9ed",
+              100: "#c8f3db",
+              200: "#9ae5be",
+              300: "#6ad79f",
+              400: "#3bc980",
+              500: "#00b35f",
+              600: "#00994d",
+              700: "#007d3d",
+              800: "#00632e",
+              900: "#004b21",
+              foreground: "#FFFFFF",
+              DEFAULT: "#00b35f",
+            },
+            secondary: {
+              50: "#e3f2ff",
+              100: "#cce6ff",
+              200: "#99ccff",
+              300: "#66b3ff",
+              400: "#3399ff",
+              500: "#0073e6",
+              600: "#0066cc",
+              700: "#0059b3",
+              800: "#004d99",
+              900: "#004080",
+              foreground: "#FFFFFF",
+              DEFAULT: "#0073e6",
+            },
+            danger: {
+              50: "#ffeff2",
+              100: "#ffdce3",
+              200: "#ffbfcc",
+              300: "#ff92a8",
+              400: "#ff5476",
+              500: "#ff1f4c",
+              600: "#ff0033",
+              700: "#db002c",
+              800: "#b30024",
+              900: "#940824",
+              foreground: "#FFFFFF",
+              DEFAULT: "#ff0033",
+            },
+          },
+        },
+        dark: {
+          colors: {
+            background: "#000000",
+            foreground: "#ECEDEE",
+            primary: {
+              50: "#e3f9ed",
+              100: "#c8f3db",
+              200: "#9ae5be",
+              300: "#6ad79f",
+              400: "#3bc980",
+              500: "#00b35f",
+              600: "#00994d",
+              700: "#007d3d",
+              800: "#00632e",
+              900: "#004b21",
+              foreground: "#FFFFFF",
+              DEFAULT: "#00b35f",
+            },
+            secondary: {
+              50: "#e3f2ff",
+              100: "#cce6ff",
+              200: "#99ccff",
+              300: "#66b3ff",
+              400: "#3399ff",
+              500: "#0073e6",
+              600: "#0066cc",
+              700: "#0059b3",
+              800: "#004d99",
+              900: "#004080",
+              foreground: "#FFFFFF",
+              DEFAULT: "#0073e6",
+            },
+            danger: {
+              50: "#ffeff2",
+              100: "#ffdce3",
+              200: "#ffbfcc",
+              300: "#ff92a8",
+              400: "#ff5476",
+              500: "#ff1f4c",
+              600: "#ff0033",
+              700: "#db002c",
+              800: "#b30024",
+              900: "#940824",
+              foreground: "#FFFFFF",
+              DEFAULT: "#ff0033",
+            },
+          },
+        },
+        mytheme: {
+          extend: "dark",
+          colors: {
+            primary: {
+              DEFAULT: "#BEF264",
+              foreground: "#000000",
+            },
+            focus: "#BEF264",
+          },
+        },
       },
-    },
-  },
-  plugins: [],
+    }),
+  ],
 };
+
 export default config;
