@@ -1,7 +1,28 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import localFont from "next/font/local";
 import { NextUIProvider } from "@nextui-org/react";
 import Header from "@/components/header/Header";
+
+const Yekan = localFont({
+  src: [
+    {
+      path: "./fonts/YekanBakhRegular.woff2",
+      weight: "500",
+      style: "Normal",
+    },
+    {
+      path: "./fonts/YekanBakhSemiBold.woff2",
+      weight: "600",
+      style: "SemiBold",
+    },
+    {
+      path: "./fonts/YekanBakhBold.woff2",
+      weight: "700",
+      style: "Bold",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body>
+      <body className={`${Yekan.className}`}>
         <NextUIProvider>
           <Header />
           {children}
