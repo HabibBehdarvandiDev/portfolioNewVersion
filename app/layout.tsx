@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import { NextUIProvider } from "@nextui-org/react";
 import Header from "@/components/header/Header";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 const Yekan = localFont({
   src: [
@@ -38,8 +39,10 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body className={`${Yekan.className}`}>
         <NextUIProvider>
-          <Header />
-          {children}
+          <NextThemesProvider attribute="class" defaultTheme="light">
+            <Header />
+            {children}
+          </NextThemesProvider>
         </NextUIProvider>
       </body>
     </html>

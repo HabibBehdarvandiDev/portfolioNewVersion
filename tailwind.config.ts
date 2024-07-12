@@ -109,16 +109,6 @@ const config: Config = {
             },
           },
         },
-        mytheme: {
-          extend: "dark",
-          colors: {
-            primary: {
-              DEFAULT: "#BEF264",
-              foreground: "#000000",
-            },
-            focus: "#BEF264",
-          },
-        },
       },
     }),
   ],

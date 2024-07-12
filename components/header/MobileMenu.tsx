@@ -3,6 +3,7 @@
 import { NavigationLinks } from "@/routes";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";
 import { IoClose } from "react-icons/io5";
 
@@ -12,6 +13,7 @@ type Props = {
 };
 
 const MobileMenu = ({ menuOpen, setMenuOpen }: Props) => {
+  const pathname = usePathname();
   return (
     <section
       className={`w-full h-screen absolute sm:hidden top-0 bg-foreground bg-opacity-25 backdrop-blur-sm transition-transform duration-300 ease-in-out shadow-md ${
@@ -27,7 +29,11 @@ const MobileMenu = ({ menuOpen, setMenuOpen }: Props) => {
             <Link
               href={link.path}
               key={index}
-              className="text-foreground text-base font-semibold"
+              className={`${
+                pathname.includes(link.path)
+                  ? "text-primary-600"
+                  : "text-foreground"
+              } text-base font-semibold`}
             >
               {link.title}
             </Link>

@@ -7,31 +7,31 @@ const NavigationLinks: Links[] = [
   },
   {
     title: "درباره من",
-    path: "/",
+    path: "/about-me",
   },
   {
     title: "مهارت های من",
-    path: "/",
+    path: "/my-skills",
   },
   {
     title: "رزومه من",
-    path: "/",
+    path: "/my-cv",
   },
   {
     title: "نمونه کار",
-    path: "/",
+    path: "/samlpe",
   },
   {
     title: "گالری",
-    path: "/",
+    path: "/gallery",
   },
   {
     title: "نظرات",
-    path: "/",
+    path: "/testemonials",
   },
   {
     title: "ارتباط با من",
-    path: "/",
+    path: "/contact-me",
   },
 ];
 
