@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";
 import { IoClose } from "react-icons/io5";
+import CvDownload from "../CvDownload";
 
 type Props = {
   menuOpen: boolean;
@@ -38,6 +39,10 @@ const MobileMenu = ({ menuOpen, setMenuOpen }: Props) => {
               {link.title}
             </Link>
           ))}
+        </div>
+
+        <div className="my-5">
+          <CvDownload />
         </div>
       </nav>
     </section>

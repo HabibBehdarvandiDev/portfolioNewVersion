@@ -9,6 +9,7 @@ import { NavigationLinks } from "@/routes";
 import { usePathname } from "next/navigation";
 import { CgDarkMode } from "react-icons/cg";
 import ThemeSwitcher from "../ThemeSwitcher";
+import CvDownload from "../CvDownload";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -50,7 +51,10 @@ const Header = () => {
           ))}
         </nav>
 
+        <div className="flex items-center align-middle gap-4">
+        <span className="hidden md:flex"><CvDownload /></span>
         <ThemeSwitcher />
+        </div>
       </header>
 
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
